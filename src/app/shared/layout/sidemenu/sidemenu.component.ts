@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidemenuComponent implements OnInit {
   menuItems: any[] = [
-    { icon: 'fa fa-home', name: 'home' },
-    { icon: 'fa fa-adjust', name: 'facturas' },
-    { icon: 'fa fa-bell', name: 'compras' },
-    { icon: 'fa fa-bullseye', name: 'settings' }
-  ]
+    { icon: 'fa fa-home', name: 'Inicio', component: 'HomeComponent' },
+    { icon: 'fa fa-file-text-o', name: 'Gestión de Facturas', component: 'BillingComponent' },
+    { icon: 'fa fa-shopping-cart', name: 'Órdenes de Compra', component: 'ShoppingComponent' },
+    { icon: 'fa fa-users', name: 'Administración', component: 'AdminComponent' },
+    { icon: 'fa fa-line-chart', name: 'Informes', component: 'ReportsComponent' },
+    { icon: 'fa fa-cog', name: 'Configuración', component: 'SettingsComponent' }
+  ];
+
   constructor() { }
 
   ngOnInit() {

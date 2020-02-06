@@ -1,14 +1,16 @@
 <nav id="sidebar">
     <div class="sidebar-header">
-        <h3>Bootstrap Sidebar</h3>
+        <img src="https://www.google.de/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Empresa">
     </div>
 
     <ul class="list-unstyled components">
-        <li class="active" *ngFor="let menu of menuItems">
-            <a href="#">
-                <i class="{{menu.icon}}" aria-hidden="true"></i>
-                {{menu.name}}
+        <li *ngFor="let menu of menuItems">
+
+            <a routerLink="'menu.component'" routerLinkActive="router-link-active" class="button">
+                <i class="icon {{menu.icon}}" aria-hidden="true"></i>
+                <span>  {{menu.name}}</span>
             </a>
         </li>
     </ul>
+
 </nav>
