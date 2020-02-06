@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidemenuComponent implements OnInit {
   menuItems: any[] = [
-    { icon: 'fas fa-home', name: 'home' },
-    { icon: 'fas fa-adjust', name: 'facturas' },
+    { icon: 'fa fa-home', name: 'home' },
+    { icon: 'fa fa-adjust', name: 'facturas' },
     { icon: 'fa fa-bell', name: 'compras' },
     { icon: 'fa fa-bullseye', name: 'settings' }
   ]

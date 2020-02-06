@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
 @NgModule({
   declarations: [
-    ToolbarComponent, 
-    SidemenuComponent
+    NavbarComponent,
+    SidemenuComponent 
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ToolbarComponent,
+    NavbarComponent,
     SidemenuComponent
   ]
 })
