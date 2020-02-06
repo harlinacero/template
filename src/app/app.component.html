@@ -1,9 +1,10 @@
 <div class="wrapper">
 
-    <app-sidemenu></app-sidemenu>
+
 
     <div id="content" role="main">
-        <app-navbar></app-navbar>
+        <app-navbar (emitExpandSidebar)="toggleSidebar($event)"></app-navbar>
+        <app-sidemenu [widthSidebar]="widthSidebar"></app-sidemenu>
         <router-outlet></router-outlet>
     </div>
 

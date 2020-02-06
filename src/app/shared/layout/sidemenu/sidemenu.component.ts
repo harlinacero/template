@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidemenu',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidemenu.component.scss']
 })
 export class SidemenuComponent implements OnInit {
+  @Input() widthSidebar = '250px';
+
+
   menuItems: any[] = [
     { icon: 'fa fa-home', name: 'Inicio', component: 'HomeComponent' },
     { icon: 'fa fa-file-text-o', name: 'Gestión de Facturas', component: 'BillingComponent' },
@@ -19,5 +22,7 @@ export class SidemenuComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }

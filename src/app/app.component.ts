@@ -8,7 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'template';
   showFiller = false;
+  widthSidebar = '250px';
 
-  
-  
+
+  toggleSidebar(event) {
+    if (event) {
+      this.widthSidebar = '250px';
+    } else {
+      this.widthSidebar = '50px';
+    }
+  }
+
+
 }
