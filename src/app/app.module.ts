@@ -1,4 +1,3 @@
-import { ModulesModule } from './modules/modules.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,7 +14,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    ModulesModule,
     SharedModule
   ],
   providers: [],

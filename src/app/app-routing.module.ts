@@ -1,39 +1,41 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BillingComponent } from './modules/billing/billing.component';
-import { HomeComponent } from './modules/home/home.component';
-import { AdminComponent } from './modules/admin/admin.component';
-import { SettingsComponent } from './modules/settings/settings.component';
-import { ShoppingComponent } from './modules/shopping/shopping.component';
-import { ReportsComponent } from './modules/reports/reports.component';
+
 
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'billing',
-    component: BillingComponent
-  }, {
+    loadChildren: () => import('./modules/billing/billing.module').then(m => m.BillingModule)
+  },
+  {
     path: 'shopping',
-    component: ShoppingComponent
-  }, {
+    loadChildren: () => import('./modules/shopping/shopping.module').then(m => m.ShoppingModule)
+  },
+  {
     path: 'admin',
-    component: AdminComponent
-  }, {
+    loadChildren: () => import('./modules/admin/admin.module').then( m => m.AdminModule)
+  },
+   {
     path: 'reports',
-    component: ReportsComponent
+    loadChildren: () => import('./modules/reports/reports.module').then(m => m.ReportsModule)
   },
   {
     path: 'settings',
-    component: SettingsComponent
+    loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./modules/session/session.module').then(m => m.SessionModule)
   },
   {
     path: 'not-found',
-    component: HomeComponent
+    redirectTo: 'home'
   },
   {
     path: '**',
@@ -48,31 +50,3 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 
-
-
-// {
-//   path: 'home',
-//   loadChildren: () => import('./modules/home/home.component').then(m => m.HomeComponent)
-// },
-// {
-//   path: 'billing',
-//   loadChildren: () => import('./modules/billing/billing.component').then(m => m.BillingComponent)
-// }, {
-//   path: 'shopping',
-//   loadChildren: () => import('./modules/shopping/shopping.component').then(m => m.ShoppingComponent)
-// }, {
-//   path: 'admin',
-//   loadChildren: () => import('./modules/admin/admin.component').then(m => m.AdminComponent)
-// },
-// {
-//   path: 'reports',
-//   loadChildren: () => import('./modules/reports/reports.component').then(m => m.ReportsComponent)
-// },
-// {
-//   path: 'settings',
-//   loadChildren: () => import('./modules/settings/settings.component').then(m => m.SettingsComponent)
-// },
-// {
-//   path: 'not-found',
-//   loadChildren: () => import('./modules/home/home.component').then(m => m.HomeComponent)
-// },

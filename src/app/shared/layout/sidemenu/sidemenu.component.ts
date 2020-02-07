@@ -6,16 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sidemenu.component.scss']
 })
 export class SidemenuComponent implements OnInit {
-  @Input() widthSidebar = '250px';
+  @Input() widthSidebar: string;
 
 
   menuItems: any[] = [
-    { icon: 'fa fa-home', name: 'Inicio', component: 'HomeComponent' },
-    { icon: 'fa fa-file-text-o', name: 'Gestión de Facturas', component: 'BillingComponent' },
-    { icon: 'fa fa-shopping-cart', name: 'Órdenes de Compra', component: 'ShoppingComponent' },
-    { icon: 'fa fa-users', name: 'Administración', component: 'AdminComponent' },
-    { icon: 'fa fa-line-chart', name: 'Informes', component: 'ReportsComponent' },
-    { icon: 'fa fa-cog', name: 'Configuración', component: 'SettingsComponent' }
+    { icon: 'fa fa-home', name: 'Inicio', component: '/home' },
+    { icon: 'fa fa-file-text-o', name: 'Gestión de Facturas', component: '/billing' },
+    { icon: 'fa fa-shopping-cart', name: 'Órdenes de Compra', component: '/shopping' },
+    { icon: 'fa fa-users', name: 'Administración', component: '/admin' },
+    { icon: 'fa fa-line-chart', name: 'Informes', component: '/reports' },
+    { icon: 'fa fa-cog', name: 'Configuración', component: '/settings' }
   ];
 
   constructor() { }

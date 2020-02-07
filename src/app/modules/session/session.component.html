@@ -1,0 +1,17 @@
+<div id="logreg-forms">
+    <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+        <div class="img-enterprise center">
+            <img src="https://www.google.de/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Empresa">
+        </div>
+
+        <input [value]="name" type="text" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <input [value]="passpord" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+
+        <button class="btn btn-success btn-block" (click)="validateSession()">
+      <i class="fas fa-sign-in-alt"></i> Sign in
+    </button>
+        <a href="#" id="forgot_pswd">Forgot password?</a>
+        <hr>
+    </form>
+</div>

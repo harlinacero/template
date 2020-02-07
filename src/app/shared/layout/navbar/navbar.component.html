@@ -1,28 +1,22 @@
 <div class="Header__container">
     <div class="Header__right-container" (click)="toggleSidebar()">
-        <div>
-            <a class="CorporateLogo__container CorporateLogo__ripple" style="background-image: url(&quot;https://andromedainci.digitalwaresaas.com.co:8085/Drive/api/Document/Public?id=5e32044dda33fc08fc6f9061&amp;folderCode=OPH_SSB_IMAGES&quot;);"></a>
-        </div>
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/The_Clorox_Company_logo.svg" alt="Enterprise logo" *ngIf="isExpandSidebar"> -->
+        <i class="{{menuIcon}} menuIcon"></i>
     </div>
     <div class="Header__left-container">
-        <a class="Header__options " href="#/home">
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
-      </svg></a>
-        <div class="Header__options ">
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z">
-        </path>
-      </svg></div>
-        <div class="Header__options Header__Language">
-            <span class="Header__selected-flag">ES</span>
-        </div>
+
         <div>
             <div class="Avatar__container Avatar__ripple">
-                <div class="Avatar__company-logo" style="background-image: url(&quot;https://andromedainci.digitalwaresaas.com.co:8085/Drive/api/Document/Public?id=5e2b2229112c140dbc4301b7&amp;folderCode=OPH_SSB_IMAGES&quot;);">
+                <div class="Avatar__company-logo">
+                    {{account}}
                 </div>
-                <div class="Avatar__user-image"><img src="https://andromedainci.digitalwaresaas.com.co:8085/Drive/api/Document/Public?id=5e3af46475d3660d4c995da0&amp;folderCode=OPH_SSB_IMAGES" alt="avatar" class="Avatar_avatar"></div>
+
+                <div class="Avatar__company-logo" title="Exit">
+                    <a routerLinkActive="router-link-active" class="button" (click)="logOut()">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <span class="menuText"></span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
