@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Sessionervice } from './session.service';
+import { AccountInterface } from 'src/app/shared/interfaces/services.interface';
 
 @Component({
   selector: 'app-session',
@@ -7,22 +9,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./session.component.scss']
 })
 export class SessionComponent implements OnInit {
-  name: string;
-  passpord: string;
+  userName: string;
+  password: string;
+  intentos = 0;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private sessionService: Sessionervice) { }
 
   ngOnInit() {
-    this.name = null;
-    this.passpord = null;
+
   }
 
-  validateSession() {
-    if (!!this.name) {
-      localStorage.setItem('account', this.name);
-      this.router.navigate(['/home']);
-    }
+  logIn(username: string, password: string, event: Event) {
+    event.preventDefault();
+    this.sessionService.login(username, password).subscribe(res => {
+      console.log(res);
+    });
+
+  }
+
+  navigate() {
+    this.router.navigateByUrl('/home');
   }
 
 
 }
+

@@ -1,10 +1,9 @@
 <div class="wrapper">
-    <app-sidemenu [widthSidebar]="widthSidebar" *ngIf="!!account"></app-sidemenu>
+    <app-sidemenu [widthSidebar]="widthSidebar"></app-sidemenu>
     <div id="content" role="main">
-        <app-navbar (emitExpandSidebar)="toggleSidebar($event)" *ngIf="!!account"></app-navbar>
+        <app-navbar (emitExpandSidebar)="toggleSidebar($event)"></app-navbar>
         <div class="container">
             <router-outlet></router-outlet>
         </div>
     </div>
-
 </div>
