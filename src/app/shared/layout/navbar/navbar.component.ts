@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { ISession } from '../../interfaces/session.interface';
 
 
 @Component({
@@ -18,21 +19,17 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.isExpandSidebar = false;
-    this.validateSession();
-
-
-  }
-
-  validateSession() {
-    this.account = localStorage.getItem('account');
-    if (!(!!this.account)) {
-      this.router.navigate(['/login']);
+    const sessionString = localStorage.getItem('session');
+    if (!!sessionString) {
+      const session: ISession = JSON.parse(sessionString);
+      this.account = session.LongName;
     }
-    this.toggleIconMenu(this.isExpandSidebar);
   }
+
 
   logOut() {
     localStorage.clear();
+    location.reload();
     this.router.navigate(['/login']);
   }
 

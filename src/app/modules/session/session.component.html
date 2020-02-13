@@ -1,8 +1,8 @@
-<div class="loginpage">
+<div class="loginpage" *ngIf="!session">
     {{intentos}}
     <div id="logreg-forms">
         <form class="form-signin">
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+            <!-- <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1> -->
             <div class="img-enterprise center">
                 <img src="./assets/images/enterpriseImage.png" alt="Empresa ">
             </div>

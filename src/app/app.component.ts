@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'template';
   widthSidebar: string;
-  account: string;
+  session: string;
 
   ngOnInit(): void {
     this.widthSidebar = '50px';
-    this.account = localStorage.getItem('account');
+    this.session = localStorage.getItem('session');
   }
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceBase } from 'src/app/shared/services/service.base';
 
 @Component({
   selector: 'app-reports',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serviceBase: ServiceBase) { }
 
   ngOnInit() {
+    this.serviceBase.validateSession();
   }
 
 }

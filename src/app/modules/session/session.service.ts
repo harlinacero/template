@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ServiceBase } from 'src/app/shared/services/service.base';
+import { RequestResult } from 'src/app/shared/interfaces/requestResult.interface';
+import { ISession } from 'src/app/shared/interfaces/session.interface';
 
 
 @Injectable()
-export class Sessionervice extends ServiceBase {
+export class Sessionervice {
 
 
-  constructor(private http: HttpClient) {
-    super(http);
+  constructor(private http: HttpClient, private serviceBase: ServiceBase) {
   }
 
   login(username: string, password: string) {
-    return this.http.post(`${this.baseUrl}login/authenticate`, {
-      username,
-      password
-    });
-
+    const urlbase = this.serviceBase.urls.urlbase;
+    return this.http.post<RequestResult<ISession>>(`${urlbase}Session/Login`, {username, password});
   }
+
+
 }

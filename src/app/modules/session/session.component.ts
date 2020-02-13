@@ -1,3 +1,4 @@
+import { ServiceBase } from 'src/app/shared/services/service.base';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Sessionervice } from './session.service';
@@ -11,26 +12,35 @@ import { AccountInterface } from 'src/app/shared/interfaces/services.interface';
 export class SessionComponent implements OnInit {
   userName: string;
   password: string;
-  intentos = 0;
+  intentos = 3;
+  session: string;
 
   constructor(private router: Router, private sessionService: Sessionervice) { }
 
   ngOnInit() {
-
+    this.session = localStorage.getItem('session');
+    if (!!this.session) {
+      this.router.navigate(['home']);
+    }
   }
 
   logIn(username: string, password: string, event: Event) {
     event.preventDefault();
-    this.sessionService.login(username, password).subscribe(res => {
-      console.log(res);
-    });
-
+    this.sessionService.login(username, password)
+      .subscribe(res => {
+        if (res.IsSuccesfull) {
+          localStorage.setItem('session', JSON.stringify(res.Result));
+          location.reload();
+          this.router.navigateByUrl('home');
+        } else {
+          this.intentos = this.intentos - 1;
+          localStorage.clear();
+          this.router.navigateByUrl('login');
+        }
+      });
   }
-
-  navigate() {
-    this.router.navigateByUrl('/home');
-  }
-
 
 }
+
+
 
