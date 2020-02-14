@@ -1,6 +1,9 @@
+<app-title [title]="'Facturación'" [icon]="'fa fa-file-text-o'"></app-title>
+
+
 <div class="example-header">
     <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
     </mat-form-field>
 </div>
 
@@ -40,7 +43,6 @@
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
 
-
-<!-- Copyright 2018 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->
+<button mat-button id="linkAdd" mat-fab color="primary" (click)="newBilling()" [title]="'Agregar'">
+    <mat-icon id="iconAdd">add</mat-icon>
+</button>

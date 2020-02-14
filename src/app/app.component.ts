@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.widthSidebar = '50px';
     this.session = localStorage.getItem('session');
+    this.addBackgroundImage(this.session);
   }
 
 
@@ -23,6 +24,23 @@ export class AppComponent implements OnInit {
       this.widthSidebar = '50px';
     }
   }
+
+
+  addBackgroundImage(session) {
+    if (!(!!session)) {
+      let a = document.getElementById("wrapper");
+      a.style.backgroundImage = 'url("./assets/images/loginImage.jpg")';
+      a.style.backgroundPosition = "center";
+      a.style.backgroundRepeat = 'no-repeat';
+      a.style.backgroundSize = 'cover';
+      a.style.height = '100vh';
+    }
+
+
+  }
+}
+
+export interface backgeound {
 
 
 }

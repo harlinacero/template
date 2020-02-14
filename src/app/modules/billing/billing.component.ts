@@ -25,7 +25,7 @@ export class BillingComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.serviceBase.validateSession();
+    // this.serviceBase.validateSession();
   }
 
 
@@ -38,6 +38,10 @@ export class BillingComponent implements OnInit, AfterViewInit {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
+  }
+
+  newBilling() {
+
   }
 
 

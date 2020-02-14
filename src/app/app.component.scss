@@ -8,6 +8,11 @@
         height: 100%;
         width: 100%;
         overflow: hidden;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* Resize the background image to cover the entire container */
         .custom-container {
             overflow: auto;
             height: 100%;
